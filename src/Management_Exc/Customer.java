@@ -17,6 +17,9 @@ public class Customer extends Person {
      * @return the dialogue of the customer
      */
     public String speak(Employee e) {
+        if(e instanceof Developer && e.getAge() < this.getAge()){
+            return "Can I see your manager [name of manager]?"+ (((Developer) e).getProjectManager()).getName() +"?";
+        }
         return null;
     }
 }
